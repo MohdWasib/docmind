@@ -1,0 +1,259 @@
+:root {
+  --bg: #fafaf7;
+  --panel: #ffffff;
+  --text: #1c1c1a;
+  --muted: #6b6b66;
+  --line: #e4e4de;
+  --accent: #2f5d50;
+  --accent-soft: #e3efe9;
+  --danger-bg: #fdecea;
+  --danger: #a12622;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161715;
+    --panel: #1f201e;
+    --text: #ecece6;
+    --muted: #9a9a92;
+    --line: #34352f;
+    --accent: #7fc4ac;
+    --accent-soft: #24352f;
+    --danger-bg: #3a1f1d;
+    --danger: #f0a39f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 28px 20px;
+  border-right: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.sidebar h1 {
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+.main {
+  padding: 28px 32px;
+  max-width: 820px;
+  width: 100%;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.upload {
+  display: block;
+  margin: 18px 0;
+  padding: 10px 12px;
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload:hover,
+.upload:focus-within {
+  background: var(--accent-soft);
+}
+
+.upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doc-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.doc-list li div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.doc-list strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ask {
+  display: flex;
+  gap: 8px;
+}
+
+.ask input {
+  flex: 1;
+  padding: 12px 14px;
+  font: inherit;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.ask input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.ask button {
+  padding: 0 20px;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ask button {
+    color: #10110f;
+  }
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ghost {
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.ghost:hover {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.error {
+  margin-top: 16px;
+  padding: 10px 14px;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-radius: 8px;
+}
+
+.answer {
+  margin: 24px 0 4px;
+  font-size: 1.1rem;
+}
+
+h2 {
+  margin: 28px 0 10px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.cite {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 0;
+  border-radius: 50%;
+  vertical-align: 2px;
+}
+
+.cite.static {
+  margin: 0 8px 0 0;
+  vertical-align: baseline;
+}
+
+.source {
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+
+.source.active {
+  border-color: var(--accent);
+}
+
+.source header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.source header .small {
+  margin-left: auto;
+}
+
+.source p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .main {
+    padding: 20px 16px;
+  }
+}

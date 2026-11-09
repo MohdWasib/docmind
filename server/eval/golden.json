@@ -1,0 +1,15 @@
+[
+  { "question": "How can I recover a commit I lost after a hard reset?", "doc": "git.md" },
+  { "question": "What does a 304 response mean?", "doc": "http-caching.md" },
+  { "question": "Which index type should I use for full-text search or JSONB?", "doc": "postgres-indexing.md" },
+  { "question": "How do I keep my final image small when building?", "doc": "docker.md" },
+  { "question": "What header tells a client how many seconds to wait before retrying?", "doc": "rate-limiting.md" },
+  { "question": "Does column order matter in a composite index?", "doc": "postgres-indexing.md" },
+  { "question": "How can I set aside work in progress before switching branches?", "doc": "git.md" },
+  { "question": "What is an ETag used for?", "doc": "http-caching.md" },
+  { "question": "Which algorithm tolerates bursts but enforces an average rate?", "doc": "rate-limiting.md" },
+  { "question": "When does Docker reuse a cached layer?", "doc": "docker.md" },
+  { "question": "What is the capital of Australia?", "doc": null },
+  { "question": "How do I train a neural network with gradient descent?", "doc": null },
+  { "question": "Recommend a good recipe for pancakes", "doc": null }
+]
